@@ -1,4 +1,4 @@
-export const DetailPage = () => {
+export const EstatesPage = () => {
     return (
         <>
 
