@@ -15,8 +15,8 @@ export const Navbar = () => {
             <nav className={s.navStyle}>
                 <ul>
                     <li><NavLink to={'/'}>Forside</NavLink></li>
-                    <li><NavLink to={'/'}>Boliger til salg</NavLink></li>                  
-                    <li><NavLink to={'/'}>Login</NavLink></li>
+                    <li><NavLink to={'/estates'}>Boliger til salg</NavLink></li>                  
+                    <li><NavLink to={'/login'}>Login</NavLink></li>
                     <li><input type="text" placeholder="Indtast søgeord"/></li>
                 </ul>
 

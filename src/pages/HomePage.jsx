@@ -11,7 +11,7 @@ export const HomePage = () => {
         <>
             <Slider />
             <GridContainer columns="1fr 1fr 1fr">
-                {!isLoading && data?.items?.map((item) => (
+                {!isLoading && data?.items?.slice(0, 3).map((item) => (
                     <Cards
                         key={item.id}
                         img={item.images[0].filename.large}
