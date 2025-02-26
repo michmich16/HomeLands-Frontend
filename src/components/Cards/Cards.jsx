@@ -1,12 +1,12 @@
-import { useGet } from '../../hooks/useGet';
+import { NavLink } from "react-router-dom";
 import s from './Cards.module.scss';
 
-export const Cards = ({ img, address, zipcode, city, type, energy_label_name, num_rooms, floor_space, price }) => {
+export const Cards = ({ img, address, zipcode, city, type, energy_label_name, num_rooms, floor_space, price, link }) => {
 
 
     return (
         <>
-            <div className={s.cardStyle}>
+            <NavLink to={link} className={s.cardStyle}>
                 <img src={img} />
                 <div className={s.primInfo}>
                     <h3>{address}</h3>
@@ -18,7 +18,7 @@ export const Cards = ({ img, address, zipcode, city, type, energy_label_name, nu
                     <p>{num_rooms} værelser, {floor_space} m2</p>
                     <p>{price} DKK</p>
                 </div>
-            </div>
+            </NavLink>
         </>
     )
 }

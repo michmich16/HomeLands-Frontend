@@ -27,6 +27,7 @@ export const HomePage = () => {
                         num_rooms={item.num_rooms}
                         floor_space={item.floor_space}
                         price={item.price}
+                        link={`/estates/${item.id}`}
                     />
                 ))}
             </GridContainer>
