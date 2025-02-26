@@ -1,0 +1,14 @@
+@import '../../assets/helper/Helper.module.scss';
+
+.reviewStyle{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    text-align: center;
+    background-color: $pink;
+    .reviewUser{
+        display: flex;
+        justify-content: center;
+    }
+}
