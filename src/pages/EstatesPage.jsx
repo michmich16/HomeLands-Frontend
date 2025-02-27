@@ -2,15 +2,16 @@ import { Cards } from "../components/Cards/Cards"
 import { GridContainer } from "../components/GridContainer/GridContainer"
 import { SectionHeader } from "../components/SectionHeader/SectionHeader"
 import { useGet } from "../hooks/useGet"
+import { FindValuesInObject } from "../context/FindValuesInObject/FindValuesInObject"
 
 export const EstatesPage = () => {
     const { isLoading, error, data } = useGet('https://api.mediehuset.net/homelands/homes');
     return (
         <>
-        <section>
-        <SectionHeader title={"Boliger til salg"}/>
-        </section>
-              <GridContainer columns="1fr 1fr 1fr">
+            <section>
+                <SectionHeader title={"Boliger til salg"} />
+            </section>
+            <GridContainer columns="1fr 1fr 1fr">
                 {!isLoading && data?.items?.map((item) => (
                     <Cards
                         key={item.id}
