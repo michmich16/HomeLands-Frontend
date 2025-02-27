@@ -20,10 +20,10 @@ export const EstateDetails = ({ img, address, zipcode, city, type, floor_space, 
                             <p>set {num_clicks} gange</p>
                         </div>
                         <div>
-                            <span><FaCamera /></span>
-                            <span><TbRuler /></span>
-                            <span><FaMapMarkerAlt /></span>
-                            <span><MdFavoriteBorder /></span>
+                            <span className={s.circleSpan}><button><FaCamera /></button></span>
+                            <span className={s.circleSpan}><button><TbRuler /></button></span>
+                            <span className={s.circleSpan}><button><FaMapMarkerAlt /></button></span>
+                            <span className={s.circleSpan}><button><MdFavoriteBorder /></button></span>
                         </div>
                         <div>
                             <h2>Kontantpris {price}</h2>
@@ -69,6 +69,9 @@ export const EstateDetails = ({ img, address, zipcode, city, type, floor_space, 
                     </div>
                 </div>
             </section>
+            <div className={s.modalStyle}>
+                
+            </div>
         </>
     )
 }
