@@ -1,11 +1,13 @@
-import { useParams } from "react-router-dom"
-import { useGet } from "../hooks/useGet"
+import { useParams } from "react-router-dom";
+import { useGet } from "../hooks/useGet";
 import { EstateDetails } from "../components/EstateDetails/EstateDetails";
 
 export const DetailPage = () => {
     const { id } = useParams();
-    const { isLoading: estateDetailsIsLoading, error: estateDetailsError, data: estateDetailsData } = useGet(`https://api.mediehuset.net/homelands/homes/${id}`)
+    const { isLoading: estateDetailsIsLoading, error: estateDetailsError, data: estateDetailsData } = useGet(`https://api.mediehuset.net/homelands/homes/${id}`);
     console.log(estateDetailsData);
+    const { item } = estateDetailsData || {};
+    const { images } = item || {};
     return (
         <>
             <div>
@@ -38,9 +40,11 @@ export const DetailPage = () => {
                     staffEmail={estateDetailsData?.item.staff?.email}
                     staffPhone={estateDetailsData?.item.staff?.phone}
                     staffRole={estateDetailsData?.item.staff?.role}
-
+                    roomImg={images}
+                    planImg={estateDetailsData?.item.floorplan.replace("https://api.mediehuset.net/images/homelands//plans/", "")}
+                    map={`https://maps.google.com/maps?&q=${encodeURIComponent(estateDetailsData?.item.address)}&output=embed`}
                 />
             </div>
         </>
-    )
-}
+    );
+};
