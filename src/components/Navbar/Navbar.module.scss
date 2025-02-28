@@ -10,6 +10,7 @@
         display: flex;
         justify-content: flex-end;
         padding: 1rem;
+
         button {
             background: none;
             border: none;
@@ -28,11 +29,38 @@
 
         li {
             padding: 0 1rem;
+
             a {
                 color: $white;
                 text-decoration: none;
+                font-family: Odibee;
+                font-size: 22px;
+                &:hover {
+                    color: $brown;
+                }
             }
         }
+        .searchBar{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            input{
+                height: 30px;
+                width: 200px;
+                border: none;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+            svg{
+                background-color: $grey;
+                color: white;
+                height: 30px;
+                width: 30px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    
     }
 
     // Hide menu by default on small screens
@@ -43,8 +71,9 @@
         top: 60px; // Adjust based on nav height
         right: 0;
         background: $black;
-        width: 100%;
-        padding: 1rem;
+        width: 100vw;
+        z-index: 99;
+        justify-content: center;
 
         li {
             padding: 1rem 0;
@@ -74,6 +103,7 @@
             position: static;
             background: none;
             width: auto;
+
             li {
                 padding: 0 1rem;
             }

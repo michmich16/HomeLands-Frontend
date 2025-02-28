@@ -1,6 +1,30 @@
-.employeesStyle{
-    img{
-        width: 100%;
+.employeesStyle {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-bottom: 2rem;
+
+    img {
+        width: 200px;
         height: 300px;
+    }
+
+    .employeeInfo {
+        border-top: 1px solid black;
+        margin-top: -2rem;
+        background-color: rgba(255, 255, 255, 0.71);
+
+        &:hover {
+            background-color: rgba(54, 54, 54, 0.71);
+            color: white;
+        }
+
+        // .employeeContact {
+        //     display: none;
+
+        //     &:hover {
+        //         display: block;
+        //     }
+        // }
     }
 }

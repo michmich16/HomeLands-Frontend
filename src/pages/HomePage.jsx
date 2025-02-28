@@ -5,6 +5,7 @@ import { SectionHeader } from "../components/SectionHeader/SectionHeader"
 import { Employees } from "../components/Employees/Employees"
 import { ReviewSection } from "../components/ReviewSection/ReviewSection"
 import { useGet } from "../hooks/useGet"
+import s from './pageStyles/HomePage.module.scss';
 export const HomePage = () => {
 
     const { isLoading, error, data } = useGet('https://api.mediehuset.net/homelands/homes');
@@ -15,41 +16,45 @@ export const HomePage = () => {
     return (
         <>
             <Slider />
-            <GridContainer columns="1fr 1fr 1fr">
-                {!isLoading && data?.items?.slice(0, 3).map((item) => (
-                    <Cards
-                        key={item.id}
-                        img={item.images[0].filename.large}
-                        address={item.address}
-                        zipcode={item.zipcode}
-                        city={item.city}
-                        energy_label_name={item.energy_label_name}
-                        num_rooms={item.num_rooms}
-                        floor_space={item.floor_space}
-                        price={item.price}
-                        link={`/estates/${item.id}`}
-                    />
-                ))}
-            </GridContainer>
-            <SectionHeader title="Det siger kunderne:" />
-                {!reviewIsLoading && reviewData?.items?.length > 0 && (
-                    (() => {
-                        // vælger random review med math.random
-                        const randomIndex = Math.floor(Math.random() * reviewData.items.length);
-                        const randomReview = reviewData.items[randomIndex];
+            <div className={s.heroEstates}>
+                <GridContainer columns="1fr 1fr 1fr">
 
-                        return (
-                            <ReviewSection
-                                key={randomReview.id}
-                                title={randomReview.title}
-                                text={randomReview.content}
-                                name={`${randomReview.user.firstname} ${randomReview.user.lastname}`}
-                                date={randomReview.created_friendly}
-                            />
-                        );
-                    })()
-                )}
-            <SectionHeader title="Mød vores ansatte" />
+                    {!isLoading && data?.items?.slice(0, 3).map((item) => (
+                        <Cards
+                            key={item.id}
+                            img={item.images[0].filename.large}
+                            address={item.address}
+                            zipcode={item.zipcode}
+                            city={item.city}
+                            type={item.type}
+                            energy_label_name={item.energy_label_name}
+                            num_rooms={item.num_rooms}
+                            floor_space={item.floor_space}
+                            price={item.price}
+                            link={`/estates/${item.id}`}
+                        />
+                    ))}
+                </GridContainer>
+            </div>
+            <SectionHeader title="Det siger kunderne:" textAlign="center" padding="2rem 0" fontSize="22px"/>
+            {!reviewIsLoading && reviewData?.items?.length > 0 && (
+                (() => {
+                    // vælger random review med math.random
+                    const randomIndex = Math.floor(Math.random() * reviewData.items.length);
+                    const randomReview = reviewData.items[randomIndex];
+
+                    return (
+                        <ReviewSection
+                            key={randomReview.id}
+                            title={randomReview.title}
+                            text={randomReview.content}
+                            name={`${randomReview.user.firstname} ${randomReview.user.lastname}`}
+                            date={randomReview.created_friendly}
+                        />
+                    );
+                })()
+            )}
+            <SectionHeader title="Mød vores ansatte" textAlign="center" padding="2rem 0" fontSize="21px"/>
             <GridContainer columns="1fr 1fr 1fr 1fr">
                 {!employeesIsLoading && employeesData?.items?.map((item) => {
                     return (

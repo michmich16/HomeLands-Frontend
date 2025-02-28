@@ -2,13 +2,26 @@
 
 .reviewStyle{
     width: 100%;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center !important;
     text-align: center;
     background-color: $pink;
+    h3{
+        font-size: 26px;
+        padding: 0.5rem 0;
+    }
+    p{
+        font-size: 20px;
+        padding: 0.5rem 0;
+    }
     .reviewUser{
         display: flex;
         justify-content: center;
+        p{
+            font-size: 15px;
+            padding: 0.5rem 0.25rem;
+        }
     }
 }

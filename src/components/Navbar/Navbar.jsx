@@ -23,7 +23,7 @@ export const Navbar = () => {
                     <li><NavLink to={'/'}>Forside</NavLink></li>
                     <li><NavLink to={'/estates'}>Boliger til salg</NavLink></li>
                     <li><NavLink to={'/login'}>Login</NavLink></li>
-                    <li>
+                    <li className={s.searchBar}>
                         <input 
                             type='search'
                             name='search'

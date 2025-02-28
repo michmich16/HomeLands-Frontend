@@ -1,25 +1,33 @@
 @import '../../assets/helper/Helper.module.scss';
 
-.cardStyle{
+.cardStyle {
     display: flex;
     flex-direction: column;
-    width: 400px;
     height: 300px;
+    padding: 1rem;
     text-decoration: none;
     color: $black;
+    background-color: rgba(255, 255, 255, 0.568);
+    border: solid 1px $grey;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    z-index: 99;
 
-    img{
+    img {
         width: 300px;
         height: 200px;
         object-fit: cover;
     }
-    .primInfo{
 
+    .primInfo {
+        display: flex;
+        flex-direction: column;
     }
-    .secInfo{
+
+    .secInfo {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: auto;
     }
 }
+

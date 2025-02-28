@@ -1,14 +1,15 @@
-.input {
-    height: 42px;
+.inputStyle {
+    height: 2rem;
     width: 100%;
-    border: none;
     outline: none;
-    background-color: rgb(242, 242, 242);
+    background-color: rgb(255, 255, 255);
     padding-left: 8px;
     transition: all 0.3s ease;
+    border: solid 1px gray;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px grey;
   
     &:hover {
-      background-color: rgb(222, 222, 222);
-      border: solid 1px rgba(40, 40, 40, 0.2);
+      background-color: rgb(204, 204, 204);
     }
   }

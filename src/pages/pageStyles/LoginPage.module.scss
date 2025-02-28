@@ -1,0 +1,27 @@
+.loginDiv{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        input{
+            margin: 2.5px 0;
+        }
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 80px;
+        height: 40px;
+        margin: 10px 0;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 2px 2px 2px rgba(132, 132, 132, 0.578);
+        align-items: center;
+    }
+}

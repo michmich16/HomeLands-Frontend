@@ -74,29 +74,29 @@ export const EstateDetails = ({
                             <p>{`${type} | ${floor_space} m2 | ${num_rooms} vær`}</p>
                             <p>set {num_clicks} gange</p>
                         </div>
-                        <div>
-                            <span className={s.circleSpan}>
-                                <button onClick={openRoomModal}>
+                        <div className={s.circleButton}>
+                  
+                                <button className={s.circleSpan} onClick={openRoomModal}>
                                     <FaCamera />
                                 </button>
-                            </span>
-                            <span className={s.circleSpan}>
-                                <button onClick={openPlanModal}>
+                 
+                     
+                                <button className={s.circleSpan} onClick={openPlanModal}>
                                     <TbRuler />
                                 </button>
-                            </span>
-                            <span className={s.circleSpan}>
-                                <button onClick={openMapModal}>
+                       
+                   
+                                <button className={s.circleSpan} onClick={openMapModal}>
                                     <FaMapMarkerAlt />
                                 </button>
-                            </span>
-                            <span className={s.circleSpan}>
-                                <button>
+               
+                 
+                                <button className={s.circleSpan}>
                                     <MdFavoriteBorder />
                                 </button>
-                            </span>
+                 
                         </div>
-                        <div>
+                        <div className={s.priceInfo}>
                             <h2>Kontantpris {price}</h2>
                             <p>Udbetaling {payout}</p>
                             <p>Ejerudgift per måned {cost}</p>

@@ -18,25 +18,79 @@
 .estateDetailStyle {
     display: flex;
     flex-direction: column;
+    width: 80%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.677);
+    margin-top: -3rem;
+    z-index: 99;
+    position: relative;
+    padding: 1rem;
 
     .estateDetailInfoGrid {
+        z-index: 99;
+
         .estateDetailInfo1 {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            padding-bottom: 2rem;
+
+            .circleButton {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                .circleSpan {
+                    width: 50px;
+                    height: 50px;
+                    background-color: rgba(255, 255, 255, 0.553);
+                    margin: 1rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: solid 1px grey;
+
+                    svg {
+                        font-size: 30px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .priceInfo {
+                display: flex;
+                flex-direction: column;
+                text-align: end;
+            }
         }
 
         .estateDetailInfo2 {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            padding-bottom: 2rem;
+            gap: 2rem;
+
+            div {
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
         }
     }
 
     .estateDetailInfo3 {
         display: grid;
         grid-template-columns: 2fr 1fr;
+        gap: 1rem;
 
         img {
             width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: 100% 10%;
         }
     }
 }
@@ -52,38 +106,39 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-.modalContent {
-    position: relative;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-
-    img {
-        width: 300px;
-        height: 250px;
+    .modalContent {
+        position: relative;
+        background: white;
+        padding: 20px 0;
+        border-radius: 10px;
+        text-align: center;
+    
+        img {
+            width: 300px;
+            height: 250px;
+        }
+    }
+    
+    .closeButton {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    .navButton {
+        background: none;
+        border: none;
+        font-size: 25px;
+        cursor: pointer;
+  
     }
 }
 
-.closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}
 
-.navButton {
-    background: none;
-    border: none;
-    font-size: 32px;
-    cursor: pointer;
-    margin: 0 10px;
-}
 
 .planImgModal {
     position: fixed;
@@ -96,27 +151,32 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
 
 .modalContent {
     position: relative;
     background: white;
-    padding: 20px;
+    padding: 20px 0;
     border-radius: 10px;
     text-align: center;
+    img {
+        width: 350px;
+        height: 350px;
+    }
 }
 
 .closeButton {
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 10px;
     background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
 }
+}
 
-.mapImgModal{
+
+.mapImgModal {
     position: fixed;
     top: 0;
     left: 0;
@@ -127,22 +187,46 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
 
 .modalContent {
     position: relative;
     background: white;
-    padding: 20px;
+    padding: 20px 0;
     border-radius: 10px;
     text-align: center;
+    iframe{
+        width: 350px;
+        height: 350px;
+    }
 }
 
 .closeButton {
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 10px;
     background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
+}
+}
+
+
+@media (max-width: 1000px) {
+    .estateDetailStyle {
+        .estateDetailInfoGrid {
+            .estateDetailInfo1 {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            .estateDetailInfo2{
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
+        .estateDetailInfo3{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
 }

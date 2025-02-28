@@ -5,10 +5,10 @@ export const Employees = ({ img, name, role, email, telephone }) => {
         <>
             <div className={s.employeesStyle}>
                 <img src={img} alt={name} />
-                <div>
+                <div className={s.employeeInfo}>
                     <h4>{name}</h4>
                     <p>{role}</p>
-                    <span>
+                    <span className={s.employeeContact}>
                         <p>Email: {email}</p>
                         <p>Mobil: {telephone}</p>
                     </span>
