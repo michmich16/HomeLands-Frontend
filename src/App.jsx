@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage';
 import { EstatesPage } from './pages/EstatesPage';
 import { DetailPage } from './pages/DetailPage';
 import { LoginPage } from './pages/LoginPage';
+import { NoPage } from './pages/NoPage';
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path={`/estates/:id`} element={<DetailPage />} />
             <Route path='/search/:keyword' element={<EstatesPage />} />
             <Route path={`/login`} element={<LoginPage />} />
+            <Route path={`/*`} element={<NoPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
