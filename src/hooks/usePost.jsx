@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const usePost = ({ url, body, token }) => {
+export const usePost = ({ url, body, token }) => { //passer url, body og token props
     const [data, setData] = useState();
     const [error, setError] = useState();
     const [isLoading, setIsLoading] = useState();

@@ -8,7 +8,7 @@ export function useGet(url, token, param) {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch(url)
+    fetch(url) //en helt normal fetching 
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => setError(err))
